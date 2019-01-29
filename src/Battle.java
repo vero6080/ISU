@@ -1,7 +1,3 @@
-
-import Data.Pokemon;
-import Data.PokemonList.Charmander;
-
 public class Battle extends javax.swing.JDialog {
     
     public Battle(java.awt.Frame parent, boolean modal) {
@@ -358,9 +354,6 @@ public class Battle extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_mnurunActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

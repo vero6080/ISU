@@ -48,7 +48,7 @@ public class Party extends javax.swing.JFrame {
         lblttask = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnubattle = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -331,8 +331,13 @@ public class Party extends javax.swing.JFrame {
 
         jMenu1.setText("Battle");
 
-        jMenuItem1.setText("Battle");
-        jMenu1.add(jMenuItem1);
+        mnubattle.setText("Battle");
+        mnubattle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnubattleActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnubattle);
 
         jMenuBar1.add(jMenu1);
 
@@ -411,6 +416,10 @@ public class Party extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void mnubattleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnubattleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnubattleActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -474,12 +483,12 @@ public class Party extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblctask;
     private javax.swing.JLabel lblttask;
+    private javax.swing.JMenuItem mnubattle;
     // End of variables declaration//GEN-END:variables
 }
