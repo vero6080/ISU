@@ -85,10 +85,10 @@ public class Main {
         }
     }
 
+    static Player player = new Player();
+    static Queue <Trainer> trainers = new ArrayDeque();
+    
     public static void main(String[] args) {
-        HashMap<Integer, String> pokeList = new HashMap<>();
-        Player player = new Player();
-        Queue <Trainer> trainers = new ArrayDeque();
         init(player, trainers);
     }
 }

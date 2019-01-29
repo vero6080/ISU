@@ -10,12 +10,15 @@ public abstract class Attack extends Move {
     
     @Override
     public void use(Pokemon myPoke, Pokemon enemyPoke) {
+        //Determine if the attack will hit.
         int accuracyVal = (int)(Math.random() * 100 + 1);
         if(accuracyVal <= myPoke.getAccuracy() - (enemyPoke.getSpeed() / 4) + (myPoke.getSpeed() / 4)) {
+            //Apply status modifier to pokemon.
             if(statusModifier != status_t.none)  {
                 myPoke.setStatus(statusModifier);
                 myPoke.setStatusCount(3);
             }
+            //Determine type damage bonus.
             int typeDamage = 0;
             switch(myPoke.getType()) {
                 case normal:
@@ -34,8 +37,12 @@ public abstract class Attack extends Move {
                     if(enemyPoke.getType() == type_t.water) typeDamage = 6;
                     break;
             }
+            //Check if damage inflicted is higher than the enemies defense.
             if(power + typeDamage + myPoke.getAttack() / 4 > enemyPoke.getDefense() / 8) {
+                //Attack the enemy.
                 enemyPoke.setHealth(enemyPoke.getHealth() - ((power + typeDamage + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8));
+                //Add xp to player's pokemon.
+                myPoke.addXp(((power + typeDamage + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8) / 2);
             }
         }
         else System.out.println("Missed");

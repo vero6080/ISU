@@ -4,11 +4,11 @@ import Data.Pokemon;
 
 //User recovers half its max HP
 
-import Data.Boost;
+import Data.Heal;
 
-public class Recover extends Boost {
+public class Recover extends Heal {
     public Recover() {
-        super("Recover", 0, trait_t.attack);
+        super("Recover", 0);
     }
     
     @Override

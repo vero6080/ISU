@@ -18,6 +18,7 @@ public abstract class Pokemon {
     protected status_t status; 
     protected int level, xp, xpMax;
     protected int attack, defense, health, speed, accuracy;
+    protected int baseAttack, baseDefense, baseHealth, baseSpeed, baseAccuracy;
     protected int statusCount;
     protected Move[] move = new Move[4];
     protected ImageIcon image;
@@ -35,6 +36,12 @@ public abstract class Pokemon {
     public int getHealth() {return health;}
     public int getSpeed() {return speed;}
     public int getAccuracy() {return accuracy;}
+    public int getBaseAttack() {return baseAttack;}
+    public int getBaseDefense() {return baseDefense;}
+    public int getBaseHealth() {return baseHealth;}
+    public int getBaseSpeed() {return baseSpeed;}
+    public int getBaseAccuracy() {return baseAccuracy;}
+    public Move[] getMove() {return move;}
     public ImageIcon getImage() {return image;}
     
     //Setters
@@ -50,6 +57,12 @@ public abstract class Pokemon {
     public void setHealth(int health) {this.health = health;}
     public void setSpeed(int speed) {this.speed = speed;}
     public void setAccuracy(int accuracy) {this.accuracy = accuracy;}
+    public void setBaseAttack(int baseAttack) {this.baseAttack = baseAttack;}
+    public void setBaseDefense(int baseDefense) {this.baseDefense = baseDefense;}
+    public void setBaseHealth(int baseHealth) {this.baseHealth = baseHealth;}
+    public void setBaseSpeed(int baseSpeed) {this.baseSpeed = baseSpeed;}
+    public void setBaseAccuracy(int baseAccuracy) {this.baseAccuracy = baseAccuracy;}
+    public void setMove(Move[] move) {this.move = move;}
     public void setImage(ImageIcon image) {this.image = image;}
     
     public Pokemon(String nameArg, int levelArg, type_t typeArg, Move m0, Move m1, Move m2, Move m3) {
@@ -59,9 +72,11 @@ public abstract class Pokemon {
         health = 100;
         xp = 0;
         xpMax = levelArg * 10;
-        attack = defense = speed = level = levelArg;
-        accuracy = levelArg * 2;
-        if(accuracy > 100) accuracy = 100;
+        baseAttack = attack = baseDefense = defense = baseSpeed = speed = level = levelArg;
+        baseAccuracy = accuracy = levelArg * 2;
+        if(accuracy > 100) {
+            baseAccuracy = accuracy = 100;
+        }
         statusCount = 0;
         move[0] = m0;
         move[1] = m1;
@@ -82,10 +97,31 @@ public abstract class Pokemon {
         if(statusCount < 1) status = status_t.none;
     }
     
-    public final void levelUp(){
-        if (xp == xpMax){
-            level++;
-            xpMax+=5;
-        }
+    public final void levelUp() {
+        level++;
+        xp = 0;
+        baseAttack += 5;
+        baseDefense += 5;
+        baseSpeed += 5;
+        baseAccuracy += 5;
+        if(level > 100) level = 100;
+        else xpMax *= 2;
+        if(baseAttack > 100) baseAttack = 100;
+        if(baseDefense > 100) baseDefense = 100;
+        if(baseSpeed > 100) baseSpeed = 100;
+        if(baseAccuracy > 100) baseAccuracy = 100;
+    }
+    
+    public final void heal() {
+        health = 100;
+        attack = baseAttack;
+        defense = baseDefense;
+        speed = baseSpeed;
+        accuracy = baseAccuracy;
+    }
+    
+    public final void addXp(int xpArg) {
+        xp += xpArg;
+        if(xp >= xpMax) levelUp();
     }
 }

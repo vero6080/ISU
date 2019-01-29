@@ -4,11 +4,11 @@ import Data.Pokemon;
 
 //User recovers half its max HP
 
-import Data.Boost;
+import Data.Heal;
 
-public class SoftBoiled extends Boost {
+public class SoftBoiled extends Heal {
     public SoftBoiled() {
-        super("SoftBoiled", 0, trait_t.attack);
+        super("SoftBoiled", 0);
     }
     
     @Override
