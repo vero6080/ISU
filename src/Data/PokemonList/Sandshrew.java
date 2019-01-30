@@ -10,6 +10,6 @@ import Data.type_t;
 
 public class Sandshrew extends Pokemon {
     public Sandshrew(int levelArg) {
-        super("Sandshrew", levelArg, type_t.grass, new DefenseCurl(), new SandAttack(), new Swift(), new Scratch());
+        super("Sandshrew", levelArg, type_t.grass, new DefenseCurl(), new SandAttack(), new Swift(), new Scratch(), "sandshrew.v1.png");
     }
 }

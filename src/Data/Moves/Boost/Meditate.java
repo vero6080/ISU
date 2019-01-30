@@ -7,6 +7,6 @@ import Data.Boost;
 
 public class Meditate extends Boost {
     public Meditate() {
-        super("Meditate", 20, trait_t.attack);
+        super("Meditate", 15, trait_t.attack);
     }
 }

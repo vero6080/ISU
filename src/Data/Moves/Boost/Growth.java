@@ -5,6 +5,6 @@ import Data.trait_t;
 
 public class Growth extends Boost{
     public Growth() {
-        super("Growth", 20, trait_t.attack);
+        super("Growth", 16, trait_t.attack);
     }
 }

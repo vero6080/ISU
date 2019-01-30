@@ -7,6 +7,6 @@ import Data.Lower;
 
 public class Growl extends Lower{
     public Growl() {
-        super("Growl", 20, trait_t.attack);
+        super("Growl", 10, trait_t.attack);
     }
 }

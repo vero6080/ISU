@@ -12,10 +12,10 @@ public class Swift extends Attack {
     
     @Override
     public void use(Pokemon myPoke, Pokemon enemyPoke) {
-        if(60 + myPoke.getAttack() / 4 <= enemyPoke.getDefense() / 8) {
+        if(26 + myPoke.getAttack() / 4 <= enemyPoke.getDefense() / 8) {
             enemyPoke.setHealth(enemyPoke.getHealth() - 1);
         }
-        else enemyPoke.setHealth(enemyPoke.getHealth() - ((60 + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8));
+        else enemyPoke.setHealth(enemyPoke.getHealth() - ((26 + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8));
     }
 }
 

@@ -7,6 +7,6 @@ import Data.Lower;
 
 public class SandAttack extends Lower{
     public SandAttack() {
-        super("SandAttack", 20, trait_t.accuracy);
+        super("SandAttack", 15, trait_t.accuracy);
     }
 }

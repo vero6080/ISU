@@ -7,6 +7,6 @@ import Data.Lower;
 
 public class Kinesis extends Lower{
     public Kinesis() {
-        super("Kinesis", 20, trait_t.accuracy);
+        super("Kinesis", 13, trait_t.accuracy);
     }
 }

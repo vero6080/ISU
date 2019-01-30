@@ -10,6 +10,6 @@ import Data.type_t;
 public class Squirtle extends Pokemon {
     
     public Squirtle(int levelArg) {
-        super("Squirtle", levelArg, type_t.water, new Tackle(), new TailWhip(), new Withdraw(), new WaterGun());
+        super("Squirtle", levelArg, type_t.water, new Tackle(), new TailWhip(), new Withdraw(), new WaterGun(), "squirtle.v1.png");
     }
 }

@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Ekans extends Pokemon {
     public Ekans(int levelArg) {
-        super("Ekans", levelArg, type_t.normal, new PoisonGas(), new Leer(), new Tackle(), new Bite());
+        super("Ekans", levelArg, type_t.normal, new PoisonGas(), new Leer(), new Tackle(), new Bite(), "ekans.v1.png");
     }
 }

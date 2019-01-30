@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Mew extends Pokemon{
     public Mew(int levelArg) {
-        super("Mew", levelArg, type_t.normal, new Pound(), new Swift(), new Barrier(), new Kinesis());
+        super("Mew", levelArg, type_t.normal, new Pound(), new Swift(), new Barrier(), new Kinesis(), "mew.v1.png");
     }
 }

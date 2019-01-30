@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Pinsir extends Pokemon{
     public Pinsir(int levelArg) {
-        super("Pinsir", levelArg, type_t.grass, new SwordsDance(), new StringShot(), new HornAttack(), new Cut());
+        super("Pinsir", levelArg, type_t.grass, new SwordsDance(), new StringShot(), new HornAttack(), new Cut(), "pinsir.v1.png");
     }
 }

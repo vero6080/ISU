@@ -8,7 +8,7 @@ import Data.PokemonList.Clefairy;
 import Data.PokemonList.Dratini;
 import Data.PokemonList.Eevee;
 import Data.PokemonList.Ekans;
-import Data.PokemonList.Electrabuzz;
+import Data.PokemonList.Electabuzz;
 import Data.PokemonList.Machop;
 import Data.PokemonList.Magikarp;
 import Data.PokemonList.Magmar;
@@ -40,7 +40,7 @@ public class Main {
         pokeList.put(5, new Dratini(randLevel));
         pokeList.put(6, new Eevee(randLevel));
         pokeList.put(7, new Ekans(randLevel));
-        pokeList.put(8, new Electrabuzz(randLevel));
+        pokeList.put(8, new Electabuzz(randLevel));
         pokeList.put(9, new Machop(randLevel));
         pokeList.put(10, new Magikarp(randLevel));
         pokeList.put(11, new Magmar(randLevel));

@@ -5,6 +5,6 @@ import Data.Lower;
 
 public class Charm extends Lower {
     public Charm() {
-        super("Charm", 20, trait_t.attack);
+        super("Charm", 15, trait_t.attack);
     }
 }

@@ -1,7 +1,6 @@
 package Data;
 
 public abstract class Boost extends Move {
-    private trait_t trait;
     public Boost(String nameArg, int powerArg, trait_t traitArg) {
         name = nameArg;
         power = powerArg;
@@ -9,7 +8,7 @@ public abstract class Boost extends Move {
     }
 
     @Override
-    public void use(Pokemon myPoke) {
+    public void use(Pokemon myPoke, Pokemon enemyPoke) {
         switch (trait) {
             case attack:
                 myPoke.setAttack(myPoke.getAttack() + power);
@@ -29,7 +28,4 @@ public abstract class Boost extends Move {
                 break;
         }
     }
-    
-    @Override
-    public void use(Pokemon arg1, Pokemon arg2) {}
 }

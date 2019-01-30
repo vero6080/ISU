@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Clefairy extends Pokemon{
     public Clefairy(int levelArg) {
-        super("Clefairy", levelArg, type_t.normal, new Growl(), new DefenseCurl(), new Swift(), new Pound());
+        super("Clefairy", levelArg, type_t.normal, new Growl(), new DefenseCurl(), new Swift(), new Pound(), "clefairy.v1.png");
     }
 }

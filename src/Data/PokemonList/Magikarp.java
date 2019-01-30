@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Magikarp extends Pokemon{
     public Magikarp(int levelArg) {
-        super("Magikarp", levelArg, type_t.water, new Tackle(), new Splash(), new Withdraw(), new TailWhip());
+        super("Magikarp", levelArg, type_t.water, new Tackle(), new Splash(), new Withdraw(), new TailWhip(), "magikarp.v1.png");
     }
 }

@@ -7,6 +7,6 @@ import Data.Boost;
 
 public class SwordsDance extends Boost{
     public SwordsDance() {
-        super("SwordsDance", 60, trait_t.attack);
+        super("SwordsDance", 30, trait_t.attack);
     }
 }

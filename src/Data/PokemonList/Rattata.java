@@ -10,7 +10,7 @@ import Data.type_t;
 public class Rattata extends Pokemon{
 
     public Rattata(int levelArg) {
-        super("Rattata", levelArg, type_t.normal, new Tackle(), new TailWhip(), new QuickAttack(), new Bite());
+        super("Rattata", levelArg, type_t.normal, new Tackle(), new TailWhip(), new QuickAttack(), new Bite(), "rattata.v1.png");
     }
     
 }

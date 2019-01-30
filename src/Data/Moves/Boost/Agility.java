@@ -7,6 +7,6 @@ import Data.Boost;
 
 public class Agility extends Boost{
     public Agility(){
-        super("Agility", 60, trait_t.speed);
+        super("Agility", 18, trait_t.speed);
     }
 }

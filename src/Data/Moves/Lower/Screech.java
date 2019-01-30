@@ -5,6 +5,6 @@ import Data.Lower;
 
 public class Screech extends Lower {
     public Screech() {
-        super("Screech", 15, trait_t.defense);
+        super("Screech", 12, trait_t.defense);
     }
 }

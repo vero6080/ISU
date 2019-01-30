@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class Trainer {
     private String name;
     private Queue <Pokemon> party;
-    private Stack <moveType_t> AIStack;
+    private final Stack <moveType_t> AIStack;
     
     public Trainer(String nameArg){
         name = nameArg;
@@ -26,14 +26,15 @@ public class Trainer {
         //removes from beginning
     }
     
+    //UNUSED
     public Move determineAction(Pokemon playerPoke) {
         //Create a hashmap of the AI's current moveset.
         HashMap<Move, moveType_t> moveMap = new HashMap<>();
         for(int i = 0; i < party.peek().getMove().length; i++) {
             if(party.peek().getMove()[i] instanceof Attack) moveMap.put(party.peek().getMove()[i], moveType_t.Attack);
-            if(party.peek().getMove()[i] instanceof Boost) moveMap.put(party.peek().getMove()[i], moveType_t.Boost);
-            if(party.peek().getMove()[i] instanceof Lower) moveMap.put(party.peek().getMove()[i], moveType_t.Lower);
-            if(party.peek().getMove()[i] instanceof Heal) moveMap.put(party.peek().getMove()[i], moveType_t.Heal);
+            else if(party.peek().getMove()[i] instanceof Boost) moveMap.put(party.peek().getMove()[i], moveType_t.Boost);
+            else if(party.peek().getMove()[i] instanceof Lower) moveMap.put(party.peek().getMove()[i], moveType_t.Lower);
+            else if(party.peek().getMove()[i] instanceof Heal) moveMap.put(party.peek().getMove()[i], moveType_t.Heal);
         }
         //Check for immediate actions in order of importance (least to greatest) and add them to the stack.
         AIStack.clear();

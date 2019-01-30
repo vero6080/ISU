@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Magmar extends Pokemon{
     public Magmar(int levelArg) {
-        super("Magmar", levelArg, type_t.fire, new Leer(), new SmokeScreen(), new BlazeKick(), new Ember());
+        super("Magmar", levelArg, type_t.fire, new Leer(), new SmokeScreen(), new BlazeKick(), new Ember(), "magmar.v1.png");
     }
 }

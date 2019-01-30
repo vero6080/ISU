@@ -1,11 +1,11 @@
 package Data;
 
 public abstract class Attack extends Move {
-    status_t statusModifier;
     public Attack(String nameArg, int powerArg, status_t statusArg) {
         name = nameArg;
         power = powerArg;
         statusModifier = statusArg;
+        missedAttack = false;
     }
     
     @Override
@@ -13,10 +13,11 @@ public abstract class Attack extends Move {
         //Determine if the attack will hit.
         int accuracyVal = (int)(Math.random() * 100 + 1);
         if(accuracyVal <= myPoke.getAccuracy() - (enemyPoke.getSpeed() / 4) + (myPoke.getSpeed() / 4)) {
+            missedAttack = false;
             //Apply status modifier to pokemon.
             if(statusModifier != status_t.none)  {
-                myPoke.setStatus(statusModifier);
-                myPoke.setStatusCount(3);
+                enemyPoke.setStatus(statusModifier);
+                enemyPoke.setStatusCount(3);
             }
             //Determine type damage bonus.
             int typeDamage = 0;
@@ -37,18 +38,17 @@ public abstract class Attack extends Move {
                     if(enemyPoke.getType() == type_t.water) typeDamage = 6;
                     break;
             }
-            //Check if damage inflicted is higher than the enemies defense.
-            if(power + typeDamage + myPoke.getAttack() / 4 > enemyPoke.getDefense() / 8) {
-                //Attack the enemy.
-                enemyPoke.setHealth(enemyPoke.getHealth() - ((power + typeDamage + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8));
-                //Add xp to player's pokemon.
-                myPoke.addXp(((power + typeDamage + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8) / 2);
+            if(power > 0) {
+                //Check if damage inflicted is higher than the enemies defense.
+                if(power + typeDamage + myPoke.getAttack() / 4 > enemyPoke.getDefense() / 8) {
+                    //Attack the enemy.
+                    enemyPoke.setHealth(enemyPoke.getHealth() - ((power + typeDamage + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8));
+                    //Add xp to player's pokemon.
+                    myPoke.addXp(((power + typeDamage + myPoke.getAttack() / 4) - enemyPoke.getDefense() / 8) / 2);
+                }
             }
         }
-        else System.out.println("Missed");
+        else missedAttack = true;
         //else {missed attack}
     }
-    
-    @Override
-    public  void use(Pokemon arg1) {}
 }

@@ -10,7 +10,7 @@ import Data.type_t;
 public class Bulbasaur extends Pokemon {
     
     public Bulbasaur(int levelArg) {
-        super("Bulbasaur", levelArg, type_t.grass, new Tackle(), new Growl(), new SleepPowder(), new VineWhip());
+        super("Bulbasaur", levelArg, type_t.grass, new Tackle(), new Growl(), new SleepPowder(), new VineWhip(), "bulbasaur.v1.png");
     }
     
 }

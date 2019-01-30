@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Eevee extends Pokemon{
     public Eevee(int levelArg) {
-        super("Eevee", levelArg, type_t.normal, new Tackle(), new Growl(), new QuickAttack(), new TailWhip());
+        super("Eevee", levelArg, type_t.normal, new Tackle(), new Growl(), new QuickAttack(), new TailWhip(), "eevee.v1.png");
     }
 }

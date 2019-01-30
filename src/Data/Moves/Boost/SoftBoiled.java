@@ -12,7 +12,7 @@ public class SoftBoiled extends Heal {
     }
     
     @Override
-    public void use(Pokemon myPoke) {
+    public void use(Pokemon myPoke, Pokemon enemyPoke) {
         myPoke.setHealth(myPoke.getHealth() + 50);
         if (myPoke.getHealth() > 100) myPoke.setHealth(100);
     }

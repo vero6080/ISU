@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Tangela extends Pokemon{
     public Tangela(int levelArg) {
-        super("Tangela", levelArg, type_t.grass, new Absorb(), new SleepPowder(), new VineWhip(), new Growth());
+        super("Tangela", levelArg, type_t.grass, new Absorb(), new SleepPowder(), new VineWhip(), new Growth(), "tangela.v1.png");
     }
 }

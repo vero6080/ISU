@@ -3,16 +3,7 @@ package Data;
 import javax.swing.ImageIcon;
 
 public abstract class Pokemon {
-    /*
-    - 5 varied properties
-    - 2 constructors
-    - 2 final methods
-    - 1 abstract method
-    - 1 regualar method
-    - 1 static variable
-    - 1 static method (to return static variable)
-    */
-    
+
     protected String name;
     protected type_t type;
     protected status_t status; 
@@ -65,15 +56,17 @@ public abstract class Pokemon {
     public void setMove(Move[] move) {this.move = move;}
     public void setImage(ImageIcon image) {this.image = image;}
     
-    public Pokemon(String nameArg, int levelArg, type_t typeArg, Move m0, Move m1, Move m2, Move m3) {
+    public Pokemon(String nameArg, int levelArg, type_t typeArg, Move m0, Move m1, Move m2, Move m3, String img) {
         name = nameArg;
         type = typeArg;
         status = status_t.none;
+        image = new ImageIcon(getClass().getResource(img));
+        if (image == null) System.out.println("Image " + img + " could not be found");
         health = 100;
         xp = 0;
-        xpMax = levelArg * 10;
+        xpMax = levelArg * 5;
         baseAttack = attack = baseDefense = defense = baseSpeed = speed = level = levelArg;
-        baseAccuracy = accuracy = levelArg * 2;
+        baseAccuracy = accuracy = levelArg * 4;
         if(accuracy > 100) {
             baseAccuracy = accuracy = 100;
         }
@@ -84,7 +77,29 @@ public abstract class Pokemon {
         move[3] = m3;
     }
     
-    public void enforceStatus() {
+    public Pokemon(String nameArg, int levelArg, type_t typeArg, int attackArg, int defenseArg, int speedArg, int accuracyArg, Move m0, Move m1, Move m2, Move m3, String img) {
+        name = nameArg;
+        type = typeArg;
+        status = status_t.none;
+        image = new ImageIcon(getClass().getResource(img));
+        if (image == null) System.out.println("Image " + img + " could not be found");
+        health = 100;
+        xp = 0;
+        xpMax = levelArg * 5;
+        baseAttack = attack = attackArg;
+        baseDefense = defense = defenseArg;
+        baseSpeed = speed = speedArg;
+        baseAccuracy = accuracy = accuracyArg;
+        level = levelArg;
+        statusCount = 0;
+        move[0] = m0;
+        move[1] = m1;
+        move[2] = m2;
+        move[3] = m3;
+    }
+    
+    public final void enforceStatus() {
+        //Damage the pokemon based on the status modifier 
         switch (status) {
             case poison:
                 health -= 5;
@@ -98,6 +113,7 @@ public abstract class Pokemon {
     }
     
     public final void levelUp() {
+        //Increase level and base stats
         level++;
         xp = 0;
         baseAttack += 5;
@@ -113,11 +129,14 @@ public abstract class Pokemon {
     }
     
     public final void heal() {
+        //Restore health and all stats 
         health = 100;
         attack = baseAttack;
         defense = baseDefense;
         speed = baseSpeed;
         accuracy = baseAccuracy;
+        status = status_t.none;
+        statusCount = 0;
     }
     
     public final void addXp(int xpArg) {

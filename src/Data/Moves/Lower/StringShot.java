@@ -7,6 +7,6 @@ import Data.Lower;
 
 public class StringShot extends Lower{
     public StringShot() {
-        super("StringShot", 60, trait_t.speed);
+        super("StringShot", 30, trait_t.speed);
     }
 }

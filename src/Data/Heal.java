@@ -7,11 +7,8 @@ public abstract class Heal extends Move {
     }
     
     @Override
-    public void use(Pokemon myPoke) {
+    public void use(Pokemon myPoke, Pokemon enemyPoke) {
         myPoke.setHealth(myPoke.getHealth() + power);
         if(myPoke.getHealth() > 100) myPoke.setHealth(100);
     }
-    
-    @Override
-    public void use(Pokemon arg1, Pokemon arg2) {}
 }

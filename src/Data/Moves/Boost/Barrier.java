@@ -7,6 +7,6 @@ import Data.Boost;
 
 public class Barrier extends Boost{
     public Barrier() {
-        super("Barrier", 60, trait_t.defense);
+        super("Barrier", 10, trait_t.defense);
     }
 }

@@ -9,6 +9,6 @@ import Data.type_t;
 
 public class Caterpie extends Pokemon{
     public Caterpie(int levelArg) {
-        super("Caterpie", levelArg, type_t.grass, new Tackle(), new StringShot(), new QuickAttack(), new DefenseCurl());
+        super("Caterpie", levelArg, type_t.grass, new Tackle(), new StringShot(), new QuickAttack(), new DefenseCurl(), "caterpie.v1.png");
     }
 }
